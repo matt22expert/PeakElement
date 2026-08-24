@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  background: #070912;
+}
+
+@keyframes floatGlow {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 25px 2px rgba(34, 211, 238, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 45px 8px rgba(34, 211, 238, 0.45);
+  }
+}
+@keyframes popVote {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.animate-float {
+  animation: floatGlow 4s ease-in-out infinite;
+}
+.animate-pulseGlow {
+  animation: pulseGlow 2.4s ease-in-out infinite;
+}
+.animate-pop {
+  animation: popVote 0.5s ease;
+}
+.scrollbar-thin::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #22d3ee55;
+  border-radius: 8px;
+}
+.bg-grid {
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.06) 1px, transparent 0);
+  background-size: 26px 26px;
+}
