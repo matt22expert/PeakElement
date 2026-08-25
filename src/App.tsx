@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { Trophy, Medal, Search, X, ChevronRight, Sparkles, Atom, Users, Vote, Crown } from "lucide-react";
-import { ELEMENTS } from "./data/elements";
+import { ELEMENTS, ChemElement } from "./data/elements";
 import {
   getOrCreateVoterId,
   castVote,
@@ -91,10 +91,10 @@ function RankBadge({ rank }: { rank: number }) {
 
 export default function App() {
   const { votes, remaining, given, voterCount, ready, vote } = useVotingData();
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState<ChemElement | null>(null);
   const [showFull, setShowFull] = useState(false);
   const [search, setSearch] = useState("");
-  const [justVoted, setJustVoted] = useState(null);
+  const [justVoted, setJustVoted] = useState<string | null>(null);
   const [toast, setToast] = useState("");
 
   const ranked = useMemo(() => {
